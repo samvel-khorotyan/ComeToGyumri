@@ -1,6 +1,6 @@
 package com.example.cometogyumri.entity;
 
-public enum Role {
+public enum  Role {
     ADMIN,
     USER
 }
