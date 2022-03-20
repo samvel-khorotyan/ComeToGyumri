@@ -17,5 +17,6 @@ public class  CreateUserRequest {
     private String password;
     private String phoneNumber;
     private String nationality;
+    private String picUrl;
     private Gender gender;
 }

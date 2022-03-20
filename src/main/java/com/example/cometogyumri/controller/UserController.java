@@ -4,18 +4,25 @@ import com.example.cometogyumri.dto.CreateUserRequest;
 import com.example.cometogyumri.entity.User;
 import com.example.cometogyumri.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+
+    @Value("${springUser.upload.path}")
+    private String imagePath;
 
 
     @GetMapping("/users")
@@ -31,11 +38,30 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @PostMapping("/addUser")
-    public String addEmployee(@ModelAttribute CreateUserRequest userRequest,
-                              @RequestParam("pictures") MultipartFile uploadFiles) throws IOException {
+    @GetMapping("/addUser")
+    public String addUserPage() {
+        return "saveUser";
+    }
 
-       userService.addUserFromUserRequest(userRequest,uploadFiles);
+    @PostMapping("/addUser")
+    public String addUser(@ModelAttribute CreateUserRequest userRequest,
+                              @RequestParam("picture") MultipartFile uploadFile) throws IOException {
+
+       userService.addUserFromUserRequest(userRequest ,uploadFile);
         return "redirect:/users";
+    }
+
+    @GetMapping("/editUser/{id}")
+    public String editUserPage(ModelMap map, @PathVariable("id") int id) {
+        map.addAttribute("user", userService.findById(id));
+        return "saveUser";
+
+    }
+
+    @GetMapping("/getImage")
+    public @ResponseBody
+    byte[] getImage(@RequestParam("picName") String picName) throws IOException {
+        InputStream inputStream = new FileInputStream(imagePath + picName);
+        return IOUtils.toByteArray(inputStream);
     }
 }
