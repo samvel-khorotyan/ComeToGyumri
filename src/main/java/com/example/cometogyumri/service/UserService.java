@@ -2,6 +2,7 @@ package com.example.cometogyumri.service;
 
 
 import com.example.cometogyumri.dto.CreateUserRequest;
+import com.example.cometogyumri.entity.Role;
 import com.example.cometogyumri.entity.User;
 import com.example.cometogyumri.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,20 +30,20 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void addUserFromUserRequest(CreateUserRequest userRequest, MultipartFile uploadedFiles) throws IOException {
-        User user = getUserFromRequest(userRequest);
-        userRepository.save(user);
-      //  saveUserImages(uploadedFiles, user);
+    public void addUserFromUserRequest(CreateUserRequest userRequest, MultipartFile uploadedFile) throws IOException {
+        userRepository.save(saveUserImages(uploadedFile,userRequest));
+
     }
 
-    private void saveUserImages(MultipartFile uploadedFiles) throws IOException {
-        String fileName = System.currentTimeMillis() + "_" + uploadedFiles.getOriginalFilename();
-        File newFile = new File(imagePath + fileName);
-        uploadedFiles.transferTo(newFile);
-    }
-
-    private User getUserFromRequest(CreateUserRequest userRequest) {
-        return User.builder()
+    private User saveUserImages(MultipartFile uploadedFiles,CreateUserRequest userRequest) throws IOException {
+        User user = new User();
+        if (!uploadedFiles.isEmpty()) {
+            String fileName = System.currentTimeMillis() + "_" + uploadedFiles.getOriginalFilename();
+            File newFile = new File(imagePath + fileName);
+            uploadedFiles.transferTo(newFile);
+            user.setPicUrl(fileName);
+        }
+        return user.builder()
                 .name(userRequest.getName())
                 .surname(userRequest.getSurname())
                 .email(userRequest.getEmail())
@@ -50,7 +51,12 @@ public class UserService {
                 .phoneNumber(userRequest.getPhoneNumber())
                 .nationality(userRequest.getNationality())
                 .gender(userRequest.getGender())
+                .role(Role.USER)
                 .build();
+    }
+
+    public User findById(int id) {
+        return userRepository.getById(id);
     }
 }
 
