@@ -31,11 +31,11 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @PostMapping("/addEmployee")
+    @PostMapping("/addUser")
     public String addEmployee(@ModelAttribute CreateUserRequest userRequest,
                               @RequestParam("pictures") MultipartFile uploadFiles) throws IOException {
 
        userService.addUserFromUserRequest(userRequest,uploadFiles);
-        return "redirect:/employees";
+        return "redirect:/users";
     }
 }
