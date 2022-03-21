@@ -1,6 +1,5 @@
 package com.example.cometogyumri.service;
 
-
 import com.example.cometogyumri.dto.CreateUserRequest;
 import com.example.cometogyumri.entity.Role;
 import com.example.cometogyumri.entity.User;
@@ -31,11 +30,10 @@ public class UserService {
     }
 
     public void addUserFromUserRequest(CreateUserRequest userRequest, MultipartFile uploadedFile) throws IOException {
-        userRepository.save(saveUserImages(uploadedFile,userRequest));
-
+        userRepository.save(saveUserImages(uploadedFile, userRequest));
     }
 
-    private User saveUserImages(MultipartFile uploadedFiles,CreateUserRequest userRequest) throws IOException {
+    private User saveUserImages(MultipartFile uploadedFiles, CreateUserRequest userRequest) throws IOException {
         User user = new User();
         if (!uploadedFiles.isEmpty()) {
             String fileName = System.currentTimeMillis() + "_" + uploadedFiles.getOriginalFilename();
