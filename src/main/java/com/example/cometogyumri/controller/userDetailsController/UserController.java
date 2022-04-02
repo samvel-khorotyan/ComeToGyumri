@@ -19,6 +19,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class UserController {
+
     private final UserService userService;
 
     @Value("${springUser.upload.path}")
@@ -26,14 +27,14 @@ public class UserController {
 
 
     @GetMapping("/users")
-    public String getAllUser(ModelMap map){
+    public String getAllUser(ModelMap map) {
         List<User> users = userService.findAll();
-        map.addAttribute("users",users);
+        map.addAttribute("users", users);
         return "user";
     }
 
     @GetMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable int id){
+    public String deleteUser(@PathVariable int id) {
         userService.deleteById(id);
         return "redirect:/users";
     }
@@ -45,9 +46,9 @@ public class UserController {
 
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute CreateUserRequest userRequest,
-                              @RequestParam("picture") MultipartFile uploadFile) throws IOException {
+                          @RequestParam("picture") MultipartFile uploadFile) throws IOException {
 
-       userService.addUserFromUserRequest(userRequest ,uploadFile);
+        userService.addUserFromUserRequest(userRequest, uploadFile);
         return "redirect:/users";
     }
 
