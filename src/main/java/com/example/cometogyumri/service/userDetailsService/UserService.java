@@ -1,6 +1,5 @@
 package com.example.cometogyumri.service.userDetailsService;
 
-import com.example.cometogyumri.dto.userDetailsDto.CreateUserRequest;
 import com.example.cometogyumri.entity.userDetail.Role;
 import com.example.cometogyumri.entity.userDetail.User;
 import com.example.cometogyumri.repository.userDetailsRepo.UserRepository;
@@ -18,7 +17,7 @@ import java.util.List;
 public class UserService {
     private final UserRepository userRepository;
 
-    @Value("${cometogyumri.upload.path}")
+    @Value("${come_to_gyumri.upload.path}")
     private String imagePath;
 
     public List<User> findAll() {
