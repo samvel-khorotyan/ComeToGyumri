@@ -4469,8 +4469,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     .card-deck .card {
         display: -ms-flexbox;
         display: flex;
-        -ms-flex: 1 0 0%;
-        flex: 1 0 0%;
+        -ms-flex: 1 0 0;
+        flex: 1 0 0;
         -ms-flex-direction: column;
         flex-direction: column;
         margin-right: 15px;
@@ -4497,8 +4497,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     }
 
     .card-group > .card {
-        -ms-flex: 1 0 0%;
-        flex: 1 0 0%;
+        -ms-flex: 1 0 0;
+        flex: 1 0 0;
         margin-bottom: 0
     }
 
@@ -9025,7 +9025,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .text-hide {
-    font: 0/0 a;
+    font: initial;
     color: transparent;
     text-shadow: none;
     background-color: transparent;
@@ -10234,31 +10234,31 @@ body .ui-tooltip {
 }
 
 .ui-icon, .ui-widget-content .ui-icon {
-    background-image: url("images/ui-icons_444444_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-widget-header .ui-icon {
-    background-image: url("images/ui-icons_444444_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon {
-    background-image: url("images/ui-icons_555555_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-state-active .ui-icon, .ui-button:active .ui-icon {
-    background-image: url("images/ui-icons_ffffff_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-state-highlight .ui-icon, .ui-button .ui-state-highlight.ui-icon {
-    background-image: url("images/ui-icons_777620_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
-    background-image: url("images/ui-icons_cc0000_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-button .ui-icon {
-    background-image: url("images/ui-icons_777777_256x240.png")
+    background-image: url("static/images/Coat_of_arms_of_gyumri.png")
 }
 
 .ui-icon-blank {
@@ -23879,19 +23879,19 @@ button.swiper-pagination-bullet {
 }
 
 .YTPOverlay.raster {
-    background: url(images/raster.png)
+    background: url(static/images/photo4jpg.jpg)
 }
 
 .YTPOverlay.raster.retina {
-    background: url(images/raster@2x.png)
+    background: url(static/images/photo4jpg.jpg)
 }
 
 .YTPOverlay.raster-dot {
-    background: url(images/raster_dot.png)
+    background: url(static/images/photo4jpg.jpg)
 }
 
 .YTPOverlay.raster-dot.retina {
-    background: url(images/raster_dot@2x.png)
+    background: url(static/images/photo4jpg.jpg)
 }
 
 .mb_YTPBar .simpleSlider {
@@ -23956,7 +23956,7 @@ button.swiper-pagination-bullet {
 }
 
 .leaflet-safari .leaflet-tile {
-    image-rendering: -webkit-optimize-contrast
+    image-rendering: -webkit-crisp-edges;
 }
 
 .leaflet-safari .leaflet-tile-container {
@@ -24243,13 +24243,13 @@ body #submit_map {
 }
 
 .leaflet-control-layers-toggle {
-    background-image: url(images/layers.html);
+    background-image: url(static/demo/images/single-list-two.jpg);
     width: 36px;
     height: 36px
 }
 
 .leaflet-retina .leaflet-control-layers-toggle {
-    background-image: url(images/layers-2x.html);
+    background-image: url(static/demo/images/single-list-two.jpg);
     background-size: 26px 26px
 }
 
@@ -24296,7 +24296,7 @@ body #submit_map {
 }
 
 .leaflet-default-icon-path {
-    background-image: url(images/marker-icon.html)
+    background-image: url(static/demo/images/single-list-two.jpg)
 }
 
 .leaflet-container .leaflet-control-attribution {
@@ -24750,7 +24750,7 @@ body #submit_map {
     height: 26px;
     border: none;
     background-color: #fff;
-    background-image: url(images/geocoder.html);
+    background-image: url(static/demo/images/single-list-two.jpg);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer
@@ -24762,7 +24762,7 @@ body #submit_map {
 }
 
 .leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
-    background-image: url(images/throbber.html)
+    background-image: url(static/images/Coat_of_arms_of_gyumri.png)
 }
 
 .leaflet-control-geocoder-form-no-error {
@@ -25038,7 +25038,7 @@ body #submit_map {
 }
 
 #leaflet-geocode-cont ul li.powered-by-osm strong:before {
-    background-image: url(../../../../i.imgur.com/YaiaYGw.png);
+    background-image: url(static/images/team/team-member-5.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
@@ -25104,7 +25104,7 @@ body #submit_map {
     height: 26px;
     border: none;
     background-color: #fff;
-    background-image: url(images/geocoder.png);
+    background-image: url(static/images/Coat_of_arms_of_gyumri.png);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer
@@ -25116,7 +25116,7 @@ body #submit_map {
 }
 
 .leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
-    background-image: url(images/throbber.gif)
+    background-image: url(static/images/preloader.gif)
 }
 
 .leaflet-control-geocoder-form-no-error {
@@ -25522,7 +25522,7 @@ body #submit_map {
 }
 
 .marker-container {
-    perspective: 1000
+    perspective: initial;
 }
 
 .marker-card {

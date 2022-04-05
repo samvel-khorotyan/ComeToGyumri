@@ -18,7 +18,7 @@ import java.util.List;
 public class UserService {
     private final UserRepository userRepository;
 
-    @Value("${springUser.upload.path}")
+    @Value("${cometogyumri.upload.path}")
     private String imagePath;
 
     public List<User> findAll() {
@@ -29,29 +29,18 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void addUserFromUserRequest(CreateUserRequest userRequest, MultipartFile uploadedFile) throws IOException {
-        userRepository.save(saveUserImages(uploadedFile, userRequest));
-    }
-
-    private User saveUserImages(MultipartFile uploadedFiles, CreateUserRequest userRequest) throws IOException {
-        User user = new User();
-        if (!uploadedFiles.isEmpty()) {
-            String fileName = System.currentTimeMillis() + "_" + uploadedFiles.getOriginalFilename();
+    public void addUserFromUserRequest(User user , MultipartFile uploadedFile) throws IOException {
+        if (!uploadedFile.isEmpty()) {
+            String fileName = System.currentTimeMillis() + "_" + uploadedFile.getOriginalFilename();
             File newFile = new File(imagePath + fileName);
-            uploadedFiles.transferTo(newFile);
+            uploadedFile.transferTo(newFile);
             user.setPicUrl(fileName);
         }
-        return user.builder()
-                .name(userRequest.getName())
-                .surname(userRequest.getSurname())
-                .email(userRequest.getEmail())
-                .password(userRequest.getPassword())
-                .phoneNumber(userRequest.getPhoneNumber())
-                .nationality(userRequest.getNationality())
-                .gender(userRequest.getGender())
-                .role(Role.USER)
-                .build();
+        user.setRole(Role.USER);
+        userRepository.save(user);
     }
+
+
 
     public User findById(int id) {
         return userRepository.getById(id);
