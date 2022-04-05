@@ -177,7 +177,7 @@
     top: 70px;
     background: #fff;
     text-align: left;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     height: calc(100vh - 75px);
     transition: all .5s ease;
 }
@@ -260,7 +260,7 @@
     z-index: 9999;
     min-width: 340px;
     background: #fff;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     transform: scale(0);
     transition: all 0.4s ease;
     transform-origin: left top;
@@ -552,7 +552,7 @@
     top: 23%;
     left: 82%;
     content: "\f3d0";
-    font-family: "Ionicons";
+    font-family: "Ionicons", serif;
     font-size: 18px;
 }
 
@@ -641,7 +641,7 @@
     top: 1px;
     color: #666;
     content: "\f3d3";
-    font-family: "Ionicons";
+    font-family: "Ionicons", serif;
 }
 
 .dash-breadcrumb-left .breadcrumb-menu ul li:last-child {
@@ -660,7 +660,7 @@
 .inbox-wrap,
 .popular-listing {
     background: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
 
@@ -1739,7 +1739,7 @@ ul.buttons li {
     overflow: hidden;
     margin-bottom: 40px;
     border-radius: 5px;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.12);
 
 }
 
@@ -1816,7 +1816,7 @@ ul.buttons li {
         top: 0;
         right: -300px;
         left: auto;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     }
 
     .menu-sidebar.show-sidebar {
@@ -2019,7 +2019,7 @@ ul.buttons li {
         }
 
         .act-wrap button.close span i {
-            right: 0%;
+            right: 0;
         }
 
         .dash-breadcrumb-left .breadcrumb-menu ul li a,
@@ -2070,3 +2070,4 @@ ul.buttons li {
             margin-bottom: 0;
         }
     }
+}

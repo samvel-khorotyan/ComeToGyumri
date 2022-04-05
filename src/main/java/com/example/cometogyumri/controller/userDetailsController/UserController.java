@@ -5,6 +5,7 @@ import com.example.cometogyumri.entity.userDetail.User;
 import com.example.cometogyumri.service.userDetailsService.UserService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,8 +22,9 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final ModelMapper modelMapper;
 
-    @Value("${springUser.upload.path}")
+    @Value("${cometogyumri.upload.path}")
     private String imagePath;
 
 
@@ -30,26 +32,26 @@ public class UserController {
     public String getAllUser(ModelMap map) {
         List<User> users = userService.findAll();
         map.addAttribute("users", users);
-        return "user";
+        return "home-v1";
     }
 
     @GetMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable int id) {
         userService.deleteById(id);
-        return "redirect:/users";
+        return "login";
     }
 
     @GetMapping("/addUser")
     public String addUserPage() {
-        return "saveUser";
+        return "login";
     }
 
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute CreateUserRequest userRequest,
                           @RequestParam("picture") MultipartFile uploadFile) throws IOException {
-
-        userService.addUserFromUserRequest(userRequest, uploadFile);
-        return "redirect:/users";
+        User user = modelMapper.map(userRequest, User.class);
+        userService.addUserFromUserRequest(user, uploadFile);
+        return "login";
     }
 
     @GetMapping("/editUser/{id}")

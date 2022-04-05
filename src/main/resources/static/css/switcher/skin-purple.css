@@ -2,7 +2,7 @@
 .btn.v1,
 .btn.v3,
 .overlay.green,
-/*.footer-wrapper.footer-fixed,*/
+    /*.footer-wrapper.footer-fixed,*/
 .header.transparent.scroll .site-navbar-wrap.v1,
 .filter-checkbox input[type="checkbox"]:checked + label::before,
 .single-team-info,
@@ -26,10 +26,10 @@
 .slider-btn.v4,
 .carousel-control-prev span,
 .carousel-control-next span,
-/*
-.footer-wrapper.footer-fixed .footer-bottom-area,
-.footer-wrapper .footer-bottom-area,
-*/
+    /*
+    .footer-wrapper.footer-fixed .footer-bottom-area,
+    .footer-wrapper .footer-bottom-area,
+    */
 .faq-section .card-header > a[aria-expanded="true"],
 .price-range .ui-slider-handle.ui-corner-all.ui-state-default,
 .site-navbar .site-navigation .site-menu .has-children .dropdown li:before,
@@ -37,7 +37,7 @@
 .page-num li:hover,
 .hero-category-content:hover,
 .about-text span::before,
-/*.slider-btn.v1:hover,*/
+    /*.slider-btn.v1:hover,*/
 .trending-place-item .save-btn:hover {
     background-color: #6449E7;
 
@@ -45,7 +45,7 @@
 
 .slider-btn.v1:hover,
 .hero-prev:hover,
-.hero-next:hover{
+.hero-next:hover {
     border-color: #6449E7;
 }
 
@@ -54,22 +54,28 @@
 .hero-next:hover i {
     color: #6449E7;
 }
-.btn.v3.white:hover{
-    background: #6449E7!important;
+
+.btn.v3.white:hover {
+    background: #6449E7 !important;
 }
+
 .hero .hero__list-item a.active-list {
     color: #6449e7;
 }
+
 .bg-green-1 {
     background: rgba(100, 73, 231, 0.08);
 }
+
 .popular-catagory-content .cat-content,
-.popular-catagory-content.v2:hover .cat-content{
-    background:rgba(100, 73, 231, 0.80);
+.popular-catagory-content.v2:hover .cat-content {
+    background: rgba(100, 73, 231, 0.80);
 }
-.pricing-table .title{
-    background:rgba(100, 73, 231, 0.80);
+
+.pricing-table .title {
+    background: rgba(100, 73, 231, 0.80);
 }
+
 .switcher-button i,
 .listing-features li i,
 .list-details-tab .nav-item.active a,
@@ -130,7 +136,8 @@ a.rate-review:hover {
     color: #6449E7;
     border: 1px solid #6449E7;
 }
+
 .section-title.v1::before {
 
-    content: url('../../images/bg/purple.png')!important;
+    content: url('../../images/bg/purple.png') !important;
 }

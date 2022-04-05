@@ -360,7 +360,6 @@ span.vert-move {
     bottom: 0;
     background: url(img/shape1.png) bottom no-repeat;
     background-size: auto;
-    background-size: contain
 }
 
 .single-home-page {
@@ -488,11 +487,13 @@ span.vert-move {
     display: inline-block;
     transition: 0.3s;
 }
+
 .purchase-btn:hover {
     background: transparent;
     border: 2px solid #fff;
     color: #fff;
 }
+
 .single-home-page.fh .demo-1 {
     height: 167px;
 }

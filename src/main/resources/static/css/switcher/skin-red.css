@@ -25,8 +25,8 @@
 .slider-btn.v4,
 .carousel-control-prev span,
 .carousel-control-next span,
-/*.footer-wrapper.footer-fixed .footer-bottom-area,
-.footer-wrapper .footer-bottom-area,*/
+    /*.footer-wrapper.footer-fixed .footer-bottom-area,
+    .footer-wrapper .footer-bottom-area,*/
 .faq-section .card-header > a[aria-expanded="true"],
 .price-range .ui-slider-handle.ui-corner-all.ui-state-default,
 .site-navbar .site-navigation .site-menu .has-children .dropdown li:before,
@@ -34,7 +34,7 @@
 .page-num li:hover,
 .hero-category-content:hover,
 .about-text span::before,
-/*.slider-btn.v1:hover,*/
+    /*.slider-btn.v1:hover,*/
 .trending-place-item .save-btn:hover {
     background-color: #f91942;
 
@@ -42,7 +42,7 @@
 
 .slider-btn.v1:hover,
 .hero-prev:hover,
-.hero-next:hover{
+.hero-next:hover {
     border-color: #f91942;
 }
 
@@ -74,9 +74,11 @@
 .popular-catagory-content.v2:hover .cat-content {
     background: rgba(249, 25, 66, 0.80);
 }
-.pricing-table .title{
-    background:rgba(249, 25, 66, 0.80);
+
+.pricing-table .title {
+    background: rgba(249, 25, 66, 0.80);
 }
+
 .switcher-button i,
 .listing-features li i,
 .list-details-tab .nav-item.active a,
@@ -137,7 +139,8 @@ a.rate-review:hover {
     color: #f91942;
     border: 1px solid #f91942;
 }
+
 .section-title.v1::before {
 
-    content: url('../../images/bg/red.png')!important;
+    content: url('../../images/bg/red.png') !important;
 }
