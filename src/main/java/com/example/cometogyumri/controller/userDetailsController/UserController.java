@@ -24,7 +24,7 @@ public class UserController {
     private final UserService userService;
     private final ModelMapper modelMapper;
 
-    @Value("${cometogyumri.upload.path}")
+    @Value("${come_to_gyumri.upload.path}")
     private String imagePath;
 
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @GetMapping("/")
     public String main(){
-        return "login";
+        return "db-messages";
     }
 }
+//        return "single-listing-four";
