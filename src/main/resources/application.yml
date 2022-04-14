@@ -1,9 +1,29 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/my_items_rest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/come_to_gyumri?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: Root
 
+come_to_gyumri:
+  upload:
+    path: C:\\images\\
 
+restaurantImages:
+  upload:
+    path: C:\\Users\\Hayk\\IdeaProjects\\ComeToGyumri\\restaurantImage\\
+
+
+
+
+
+  http:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+
+
+server:
+  port: 8081
 
 

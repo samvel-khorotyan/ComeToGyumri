@@ -14,5 +14,5 @@ public class CreateRestaurantRequest {
     private String phone;
     private String address;
     private String description;
-    private int userId;
+
 }

@@ -27,6 +27,11 @@ public class UserController {
     @Value("${come_to_gyumri.upload.path}")
     private String imagePath;
 
+    @GetMapping("/login")
+    public String loginPage(){
+        return "login";
+    }
+
 
     @GetMapping("/users")
     public String getAllUser(ModelMap map) {
