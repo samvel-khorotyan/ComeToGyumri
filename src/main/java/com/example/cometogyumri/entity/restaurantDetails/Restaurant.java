@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,8 +17,11 @@ import javax.persistence.*;
 @Table
 public class Restaurant {
 
-     @Id
+
+
+    @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
     private String name;
     private String phone;
@@ -25,5 +29,7 @@ public class Restaurant {
     private String description;
     @ManyToOne
     private User user;
+
+
 
 }

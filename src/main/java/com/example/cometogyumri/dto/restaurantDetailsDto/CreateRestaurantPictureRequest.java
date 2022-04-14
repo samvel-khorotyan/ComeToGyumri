@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateRestaurantPictureRequest {
+public class  CreateRestaurantPictureRequest {
 
     private int id;
     private String picUrl;

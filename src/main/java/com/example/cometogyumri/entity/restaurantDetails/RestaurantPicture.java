@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table
+@Table(name = "rest_pic")
 public class RestaurantPicture {
 
     @Id
@@ -20,5 +20,6 @@ public class RestaurantPicture {
     private int id;
     private String picUrl;
     @ManyToOne
+    @JoinColumn(name ="rest_id")
     private Restaurant restaurant;
 }
