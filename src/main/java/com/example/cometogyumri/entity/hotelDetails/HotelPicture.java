@@ -19,6 +19,7 @@ public class HotelPicture {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String picUrl;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
+    @JoinColumn(name = "hot_id")
     private Hotel hotel;
 }

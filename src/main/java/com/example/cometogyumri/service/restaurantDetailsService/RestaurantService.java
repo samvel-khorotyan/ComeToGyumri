@@ -31,12 +31,6 @@ public class RestaurantService {
 
     }
 
-
-//    public Restaurant save(Restaurant restaurant) {
-//        return restaurantRepository.save(restaurant);
-//    }
-
-
     public void deleteById(int id) {
         restaurantRepository.deleteById(id);
     }
