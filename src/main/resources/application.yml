@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/come_to_gyumri?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
-    password: Root
+    password: root
 
 come_to_gyumri:
   upload:
@@ -13,17 +13,11 @@ restaurantImages:
     path: C:\\Users\\Hayk\\IdeaProjects\\ComeToGyumri\\restaurantImage\\
 
 
-
-
-
-  http:
-    multipart:
-      max-file-size: 200MB
-      max-request-size: 200MB
-
-
+hotelImagePath:
+  upload:
+    path: C:\\hotelImagePath\\
 
 server:
-  port: 8081
+  port: 8080
 
 
