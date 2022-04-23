@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,6 +24,8 @@ public class Hotel {
     private String phone;
     private String address;
     private String description;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private User user;
+    @OneToMany(mappedBy = "hotel")
+    private List<HotelPicture> HotelPictures;
 }

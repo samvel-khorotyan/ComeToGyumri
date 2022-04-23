@@ -28,10 +28,9 @@ public class UserController {
     private String imagePath;
 
     @GetMapping("/login")
-    public String loginPage(){
+    public String loginPage() {
         return "login";
     }
-
 
     @GetMapping("/users")
     public String getAllUser(ModelMap map) {
@@ -63,7 +62,6 @@ public class UserController {
     public String editUserPage(ModelMap map, @PathVariable("id") int id) {
         map.addAttribute("user", userService.findById(id));
         return "saveUser";
-
     }
 
     @GetMapping("/getImage")
