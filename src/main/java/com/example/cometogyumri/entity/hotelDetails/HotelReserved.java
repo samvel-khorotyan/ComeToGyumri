@@ -20,10 +20,11 @@ public class HotelReserved {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private User user;
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Room room;
+    @ManyToOne
+    private Hotel hotel;
     private Date startDate;
     private Date endDate;
+    private RoomNumber roomNumber;
 }

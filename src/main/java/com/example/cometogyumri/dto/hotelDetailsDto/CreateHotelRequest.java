@@ -14,5 +14,6 @@ public class CreateHotelRequest {
     private String phone;
     private String address;
     private String description;
+    private String hotelPic;
     private int userId;
 }
