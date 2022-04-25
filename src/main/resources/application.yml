@@ -4,15 +4,14 @@ spring:
     username: root
     password: root
 
-come_to_gyumri:
-  upload:
-    path: C:\\images\\
 
 restaurantImages:
   upload:
     path: C:\\Users\\Hayk\\IdeaProjects\\ComeToGyumri\\restaurantImage\\
 
-
+come_to_gyumri:
+  upload:
+    path: C://Users//Mkhitar Mkhitaryan//Desktop//img//
 hotelImagePath:
   upload:
     path: C:\\hotelImagePath\\
