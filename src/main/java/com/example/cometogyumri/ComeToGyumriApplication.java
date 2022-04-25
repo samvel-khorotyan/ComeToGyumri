@@ -9,5 +9,4 @@ public class ComeToGyumriApplication {
     public static void main(String[] args) {
         SpringApplication.run(ComeToGyumriApplication.class, args);
     }
-
 }

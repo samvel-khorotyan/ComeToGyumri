@@ -30,7 +30,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void addUserFromUserRequest(User user , MultipartFile uploadedFile) throws IOException {
+    public void addUserFromUserRequest(User user, MultipartFile uploadedFile) throws IOException {
         if (!uploadedFile.isEmpty()) {
             String fileName = System.currentTimeMillis() + "_" + uploadedFile.getOriginalFilename();
             File newFile = new File(imagePath + fileName);
@@ -42,8 +42,6 @@ public class UserService {
         user.setRole(Role.USER);
         userRepository.save(user);
     }
-
-
 
     public User findById(int id) {
         return userRepository.getById(id);

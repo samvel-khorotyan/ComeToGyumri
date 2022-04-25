@@ -13,11 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-
 
     private final UserDetailsImpl userDetails;
 
@@ -32,11 +30,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-//                .antMatchers(HttpMethod.GET, "/").permitAll()
+                .antMatchers(HttpMethod.GET, "/").permitAll()
+                .antMatchers(HttpMethod.GET,"/hotelImages").permitAll()
                 .antMatchers(HttpMethod.GET, "/image/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/hotels").permitAll()
                 .antMatchers(HttpMethod.GET, "/addHotel").hasAnyAuthority(Role.ADMIN.name(),Role.USER.name())
                 .antMatchers(HttpMethod.POST, "/addHotel").hasAnyAuthority(Role.ADMIN.name(),Role.USER.name())
+                .antMatchers(HttpMethod.POST, "/hotelBooking").hasAnyAuthority(Role.ADMIN.name(),Role.USER.name())
+                .antMatchers(HttpMethod.GET, "/hotelBooking{id}").hasAnyAuthority(Role.ADMIN.name(),Role.USER.name())
                 .antMatchers(HttpMethod.GET, "/addUser").permitAll()
                 .antMatchers(HttpMethod.POST, "/addUser").permitAll()
                 .antMatchers(HttpMethod.GET, "/addRestaurant").permitAll()
@@ -46,13 +47,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
     }
 
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.userDetailsService(userDetails)
                 .passwordEncoder(passwordEncoder());
-
     }
 
     @Bean

@@ -1,6 +1,5 @@
 package com.example.cometogyumri.dto.hotelDetailsDto;
 
-import com.example.cometogyumri.entity.hotelDetails.Hotel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,5 +11,5 @@ public class CreateHotelPictureRequest {
 
     private int id;
     private String picUrl;
-    private int hotelId;
+    private int roomId;
 }
