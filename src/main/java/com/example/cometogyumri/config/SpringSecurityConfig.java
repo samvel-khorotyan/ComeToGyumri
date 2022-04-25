@@ -32,7 +32,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers(HttpMethod.GET, "/").permitAll()
+//                .antMatchers(HttpMethod.GET, "/").permitAll()
                 .antMatchers(HttpMethod.GET, "/image/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/hotels").permitAll()
                 .antMatchers(HttpMethod.GET, "/addHotel").hasAnyAuthority(Role.ADMIN.name(),Role.USER.name())
@@ -41,6 +41,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/addUser").permitAll()
                 .antMatchers(HttpMethod.GET, "/addRestaurant").permitAll()
                 .antMatchers(HttpMethod.POST, "/addRestaurant").permitAll()
+                .antMatchers(HttpMethod.GET, "/userProfile/{id}").hasAnyAuthority(Role.ADMIN.name(),Role.USER.name())
                 .antMatchers("/deleteRestaurant/{id}").hasAnyAuthority(Role.ADMIN.name())
                 .anyRequest().authenticated();
     }

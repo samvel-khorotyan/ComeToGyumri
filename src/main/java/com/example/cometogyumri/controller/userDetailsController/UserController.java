@@ -2,11 +2,13 @@ package com.example.cometogyumri.controller.userDetailsController;
 
 import com.example.cometogyumri.dto.userDetailsDto.CreateUserRequest;
 import com.example.cometogyumri.entity.userDetail.User;
+import com.example.cometogyumri.security.CurrentUser;
 import com.example.cometogyumri.service.userDetailsService.UserService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -64,6 +66,12 @@ public class UserController {
         map.addAttribute("user", userService.findById(id));
         return "saveUser";
 
+    }
+
+    @GetMapping("/userProfile/{id}")
+    public String userProfile(ModelMap modelMap,  CurrentUser currentUser) {
+        modelMap.addAttribute("user",userService.getById(currentUser.getUser().getId()));
+        return "myProfile";
     }
 
     @GetMapping("/getImage")
