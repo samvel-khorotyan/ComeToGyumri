@@ -10,8 +10,11 @@ import lombok.NoArgsConstructor;
 public class CreateRestaurantReservedRequest {
 
     private int id;
-    private int userId;
-    private int restaurantTableId;
-    private String startDate;
-    private String endDate;
+    private int restaurantId;
+    private String bookingDate;
+    private String bookingStartTime;
+    private String bookingEndTime;
+    private String tableNumber;
+    private int personCount;
+
 }

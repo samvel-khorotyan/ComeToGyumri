@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class CreateRestaurantCommentRequest {
 
     private int id;
-    private int userId;
-    private int restaurantId;
     private String description;
+
 }
