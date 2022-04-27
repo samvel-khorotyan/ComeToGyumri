@@ -11,11 +11,11 @@
     <!-- google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     <!-- Plugins CSS -->
-    <link href="css/plugin.css" rel="stylesheet" />
+    <link href="/css/plugin.css" rel="stylesheet" />
     <!-- style CSS -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <!--color switcher css-->
-    <link rel="stylesheet" href="css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <link rel="stylesheet" href="/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
     <!-- Document Title -->
     <title>listagram - Directory Listing HTML Template</title>
 </head>
@@ -31,51 +31,17 @@
                 <div class="site-navbar">
                     <div class="row align-items-center">
                         <div class="col-md-4 col-6">
-                            <a class="navbar-brand" href="#"><h1>COME TO GYUMRI</h1></a>
+                            <a class="navbar-brand" href="/"><img src="/images/intro.png" alt="logo" class="img-fluid"></a>
                         </div>
                         <div class="col-md-8 col-6">
                             <nav class="site-navigation float-left">
                                 <div class="container">
                                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                        <li class="has-children">
-                                            <a href="#">Home</a>
-                                            <ul class="dropdown">
-                                                <li><a href="home-v1.html">Home Tab</a></li>
-                                            </ul>
+                                        <li>
+                                            <a href="/">Գլխավոր էջ</a>
                                         </li>
-                                        <li class="has-children">
-                                            <a href="#">Listings</a>
-                                            <ul class="dropdown">
-                                                <li class="has-children">
-                                                    <a href="#">Grid Layout</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="grid-two-column.html">Grid two column</a></li>
-                                                        <li><a href="grid-left-sidebar.html">Left Sidebar</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-children">
-                                                    <a href="#">OpenStreet Map</a>
-                                                </li>
-                                                <li class="has-children">
-                                                    <a href="#">Category Listings</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="all-categories.html">All Category</a></li>
-                                                        <li><a href="all-locations.html">All Locations</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-children">
-                                                    <a href="#">Listing Details</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="single-listing-one.html">Single Listing one</a></li>
-                                                        <li><a href="single-listing-two.html">Single Listing two</a></li>
-                                                        <li><a href="single-listing-three.html">Single Listing three</a></li>
-                                                        <li><a href="single-listing-four.html">Single Listing four</a></li>
-                                                        <li><a href="single-listing-five.html">Single Listing five</a></li>
-
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <li>
+                                            <a href="/restaurants">Ռեստորաններ</a>
                                         <li class="has-children">
                                             <a href="#">Pages</a>
                                             <ul class="dropdown">
@@ -138,7 +104,7 @@
     </header>
     <!--Header ends-->
     <!--User Login section starts-->
-    <div class="user-login-section section-padding bg-fixed" style="background-image: url(images/header/hero-5.jpg)">
+    <div class="user-login-section section-padding bg-fixed" style="background-image: url(/images/header/Rest_2-1.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1  text-center">
@@ -152,33 +118,32 @@
                             <div class="tab-pane fade show active" id="login" role="tabpanel">
                                 <form id="login-form" action="/addRestaurant" method="post" enctype="multipart/form-data" >
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="">
+                                        <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Ռեստորանի անունը" value="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="phone" id="Phone" tabindex="2" class="form-control" placeholder="Phone" value="">
+                                        <input type="text" name="phone" id="Phone" tabindex="2" class="form-control" placeholder="հեռ․համար" value="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="address" id="Address" tabindex="3" class="form-control" placeholder="Address" value="">
+                                        <input type="text" name="address" id="Address" tabindex="3" class="form-control" placeholder="հասցե" value="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="description" id="Description" tabindex="4" class="form-control" placeholder="Description" value="">
+                                        <textarea class="contact-form__textarea form-control" name="description" id="description"  placeholder="նկարագրություն"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <input type="file" name="pictures" id="picture" tabindex="7" class="form-control" value="" multiple>
+                                        <div class="contact-form__upload-btn xs-left">
+                                            <input class="contact-form__input-file" type="file" name="pictures" id="photo-upload" multiple>
+                                            <span style="color: lightseagreen">
+
+                                                    Upload Photos
+                                                </span>
+                                        </div>
                                     </div>
 
                                     <div class="res-box text-center mar-top-30">
-                                        <button type="submit" class="btn v3"><i class="ion-log-in"></i>ADD</button>
+                                        <button type="submit" class="btn v3">Ավելացնել</button>
                                     </div>
                                 </form>
-                                <div class="social-profile-login text-center mar-top-30">
-                                    <h5>or Login with</h5>
-                                    <ul class="social-btn">
-                                        <li class="bg-fb"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li class="bg-tt"><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                        <li class="bg-ig"><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    </ul>
-                                </div>
+
                             </div>
                         </div>
                     </div>

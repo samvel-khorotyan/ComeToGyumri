@@ -11,12 +11,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -36,7 +40,7 @@ public class RestaurantController {
     public String getAllRestaurant(ModelMap map) {
         List<Restaurant> restaurants = restaurantService.findAll();
         map.addAttribute("restaurants", restaurants);
-        return "home-v1";
+        return "restaurants";
     }
 
     @GetMapping("/deleteRestaurant/{id}")
@@ -47,16 +51,25 @@ public class RestaurantController {
 
     @GetMapping("/addRestaurant")
     public String addRestaurantPage() {
-        return "login";
+        return "saveRestaurant";
     }
 
     @PostMapping("/addRestaurant")
-    public String addRestaurant(@ModelAttribute CreateRestaurantRequest createRestaurantRequest,
+    public String addRestaurant(@ModelAttribute @Valid CreateRestaurantRequest createRestaurantRequest,
+                          BindingResult bindingResult,
                           @RequestParam("pictures") MultipartFile[] uploadFiles,
-                           @AuthenticationPrincipal CurrentUser  currentUser) throws IOException {
+                           @AuthenticationPrincipal CurrentUser  currentUser,ModelMap map) throws IOException {
+        if (bindingResult.hasErrors()) {
+            List<String> errors = new ArrayList<>();
+            for (ObjectError allError : bindingResult.getAllErrors()) {
+                errors.add(allError.getDefaultMessage());
+                map.addAttribute("errors", errors);
+            }
+            return "saveRestaurant";
+        }
         Restaurant restaurant = modelMapper.map(createRestaurantRequest, Restaurant.class);
        restaurantService.addRestaurant(restaurant, uploadFiles,currentUser.getUser());
-        return "/saveRestaurant";
+        return "redirect:/restaurants";
     }
 
     @GetMapping("/editRestaurant/{id}")
@@ -66,11 +79,11 @@ public class RestaurantController {
 
     }
 
-//    @GetMapping("/getImages")
-//    public @ResponseBody
-//    byte[] getImage(@RequestParam("picName") String picName) throws IOException {
-//        InputStream inputStream = new FileInputStream(imagePath + picName);
-//        return IOUtils.toByteArray(inputStream);
-//    }
+    @GetMapping("/restaurantGetImages")
+    public @ResponseBody
+    byte[] getImage(@RequestParam("restaurantPicName") String picName) throws IOException {
+        InputStream inputStream = new FileInputStream(imagePath + picName);
+        return IOUtils.toByteArray(inputStream);
+    }
 
 }

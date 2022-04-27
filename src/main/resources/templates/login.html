@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<html dir="ltr" lang="en-US" xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
 
 <head>
     <!-- Metas -->
@@ -31,7 +31,7 @@
                 <div class="site-navbar">
                     <div class="row align-items-center">
                         <div class="col-md-4 col-6">
-                            <a class="navbar-brand" href="#"><h1>COME TO GYUMRI</h1></a>
+                            <a class="navbar-brand" href="/"><img src="/images/intro.png" alt="logo" class="img-fluid"></a>
                         </div>
                         <div class="col-md-8 col-6">
                             <nav class="site-navigation float-left">
@@ -143,7 +143,7 @@
     </header>
     <!--Header ends-->
     <!--User Login section starts-->
-    <div class="user-login-section section-padding bg-fixed" style="background-image: url(images/header/hero-5.jpg)">
+    <div class="user-login-section section-padding bg-fixed" style="background-image: url(/images/header/arigyumri11.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1  text-center">
@@ -151,10 +151,10 @@
                         <ul class="ui-list nav nav-tabs justify-content-center mar-bot-30" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#login" role="tab"
-                                   aria-selected="true">Login</a>
+                                   aria-selected="true">Մուտք</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#register" role="tab" aria-selected="false">Register</a>
+                                <a class="nav-link" data-toggle="tab" href="#register" role="tab" aria-selected="false">Գրանցում</a>
                             </li>
                         </ul>
                         <div class="ui-dash tab-content">
@@ -162,36 +162,34 @@
                                 <form id="login-form" action="/login" method="post">
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1"
-                                               class="form-control" placeholder="email" value="" required>
+                                               class="form-control" placeholder="էլ․հասցե" value="" required>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="2"
-                                               class="form-control" placeholder="Password">
+                                               class="form-control" placeholder="Գաղտնաբառ">
                                     </div>
                                     <div class="row mar-top-20">
                                         <div class="col-md-6 col-12 text-left">
                                             <div class="res-box">
-                                                <input type="checkbox" tabindex="3" class="" name="remember"
-                                                       id="remember">
-                                                <label for="remember">Remember Me</label>
+
+                                                <label for="remember"></label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 text-right">
                                             <div class="res-box sm-left">
-                                                <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                <a href="#" tabindex="5" ></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="res-box text-center mar-top-30">
-                                        <button type="submit" class="btn v3"><i class="ion-log-in"></i> Log In</button>
+                                        <button type="submit" class="btn v3"><i ></i>Մուտք</button>
                                     </div>
                                 </form>
                                 <div class="social-profile-login text-center mar-top-30">
-                                    <h5>or Login with</h5>
                                     <ul class="social-btn">
-                                        <li class="bg-fb"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li class="bg-tt"><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                        <li class="bg-ig"><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                        <li ><a href="#"><i ></i></a></li>
+                                        <li ><a href="#"><i ></i></a></li>
+                                        <li ><a href="#"><i></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -200,53 +198,48 @@
                                       enctype="multipart/form-data">
                                     <div class="form-group">
                                         <input type="text" name="name" id="name" tabindex="1" class="form-control"
-                                               placeholder="name" value="">
+                                               placeholder="Անուն" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="surname" id="surname" tabindex="2" class="form-control"
-                                               placeholder="surname" value="">
+                                               placeholder="Ազգանուն" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" tabindex="3" class="form-control"
-                                               placeholder="Email" value="">
+                                               placeholder="Էլ․հասցե" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="4"
-                                               class="form-control" placeholder="Password" value="">
+                                               class="form-control" placeholder="Գաղտնաբառ" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="phoneNumber" id="phoneNumber" tabindex="5"
-                                               class="form-control" placeholder="PhoneNumber" value="">
+                                               class="form-control" placeholder="Հեռ․համար" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="nationality" id="nationality" tabindex="6"
-                                               class="form-control" placeholder="Nationality" value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="picture" id="picture" tabindex="7" class="form-control"
-                                               placeholder="PicUrl" value="" multiple>
+                                               class="form-control" placeholder="Ազգություն" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="gender" id="gender" tabindex="8" class="form-control"
-                                               placeholder="Gender" value="">
+                                               placeholder="Սեռ" value="">
                                     </div>
+                                    <div class="contact-form__upload-btn xs-left">
+                                        <input class="contact-form__input-file" type="file" name="picture" id="photo-upload" multiple>
+                                        <span style="color: lightseagreen">Ավելացնել նկար</span>
+                                    </div>
+
                                     <div class="res-box text-left">
-                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                                        <label for="remember">I've read and accept terms &amp; conditions</label>
+                                        <input tabindex="3" class="" name="remember" id="remember" hidden>
+
                                     </div>
                                     <div class="res-box text-center mar-top-30">
                                         <button type="submit" class="btn v3"><i
-                                                class="ion-android-checkmark-circle"></i>Sign Up
+                                                ></i>Գրանցում
                                         </button>
                                     </div>
                                 </form>
                                 <div class="social-profile-login text-center mar-top-30">
-                                    <h5>or Sign Up with</h5>
-                                    <ul class="social-btn">
-                                        <li class="bg-fb"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li class="bg-tt"><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                        <li class="bg-ig"><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +25,7 @@ public class RestaurantService {
     private String restaurantImagePath;
 
     public void addRestaurant(Restaurant restaurant, MultipartFile[] uploadFiles, User user) throws IOException {
+
         restaurant.setUser(user);
         restaurantRepository.save(restaurant);
         saveRestaurantImages(uploadFiles, restaurant);
@@ -57,5 +59,9 @@ public class RestaurantService {
                 pictureRepository.save(picture);
             }
         }
+    }
+
+    public Restaurant getRestaurantById(int restaurantId) {
+      return restaurantRepository.getById(restaurantId);
     }
 }

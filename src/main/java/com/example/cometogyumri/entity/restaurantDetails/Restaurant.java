@@ -1,15 +1,16 @@
 package com.example.cometogyumri.entity.restaurantDetails;
 
 import com.example.cometogyumri.entity.userDetail.User;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -29,7 +30,21 @@ public class Restaurant {
     private String description;
     @ManyToOne
     private User user;
+    @OneToMany(mappedBy = "restaurant")
+    @ToString.Exclude
+    private List<RestaurantPicture>restaurantPictures;
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Restaurant that = (Restaurant) o;
+        return Objects.equals(id, that.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
