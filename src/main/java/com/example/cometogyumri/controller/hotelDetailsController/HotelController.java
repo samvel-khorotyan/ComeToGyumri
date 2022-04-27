@@ -34,7 +34,7 @@ public class HotelController {
 
     @GetMapping("/addHotel")
     public String addHotel() {
-        return "addHotel";
+        return "saveHotel";
     }
 
     @PostMapping("/addHotel")
@@ -43,7 +43,7 @@ public class HotelController {
 
         Hotel hotel = modelMapper.map(createHotelRequest, Hotel.class);
         hotelService.saveHotel(hotel, uploadFiles, currentUser.getUser());
-        return "hotels";
+        return "hotels1";
     }
 
     @GetMapping("/hotels")
@@ -54,11 +54,8 @@ public class HotelController {
 
     @GetMapping("/hotelBooking{id}")
     public String hotelBooking(@PathVariable("id") int id, ModelMap map) {
-        if (hotelService.findById(id) != null) {
-            map.addAttribute("hotel", hotelService.findById(id));
+            map.addAttribute("hotel", hotelService.getById(id));
             return "hotelBooking";
-        }
-        return "redirect:/hotels";
     }
 
     @PostMapping("/hotelBooking{id}")
@@ -67,7 +64,8 @@ public class HotelController {
                                @PathVariable("id") int id) {
 
         HotelReserved hotelReserved = modelMapper.map(createHotelReservedRequest, HotelReserved.class);
-        hotelReservedService.save(hotelReserved, currentUser.getUser(), id);
+        Hotel hotel = hotelService.getById(id);
+        hotelReservedService.save(hotelReserved, currentUser.getUser(), hotel);
         return "redirect:/hotels";
     }
 

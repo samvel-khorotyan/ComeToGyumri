@@ -1,11 +1,8 @@
 package com.example.cometogyumri.dto.hotelDetailsDto;
 
-import com.example.cometogyumri.entity.hotelDetails.RoomNumber;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -17,5 +14,5 @@ public class CreateHotelReservedRequest {
     private int hotelId;
     private String startDate;
     private String endDate;
-    private RoomNumber roomNumber;
+    private String roomNumber;
 }
