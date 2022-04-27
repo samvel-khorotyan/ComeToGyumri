@@ -24,7 +24,10 @@ public class HotelReserved {
     private User user;
     @ManyToOne
     private Hotel hotel;
+    @Column(name = "start_date")
     private Date startDate;
+    @Column(name = "end_date")
     private Date endDate;
+    @Enumerated(EnumType.STRING)
     private RoomNumber roomNumber;
 }
