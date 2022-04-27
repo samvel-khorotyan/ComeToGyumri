@@ -3,19 +3,19 @@
 
 <head>
     <!-- Metas -->
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="LionCoders" />
+    <meta name="author" content="LionCoders"/>
     <!-- Links -->
-    <link rel="icon" type="image/png" href="#" />
+    <link rel="icon" type="image/png" href="#"/>
     <!-- google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     <!-- Plugins CSS -->
-    <link href="css/plugin.css" rel="stylesheet" />
+    <link href="css/plugin.css" rel="stylesheet"/>
     <!-- style CSS -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet"/>
     <!--color switcher css-->
-    <link rel="stylesheet" href="css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <link rel="stylesheet" href="css/switcher/skin-aqua.css" media="screen" id="style-colors"/>
     <!-- Document Title -->
     <title>listagram - Directory Listing HTML Template</title>
 </head>
@@ -66,11 +66,16 @@
                                                 <li class="has-children">
                                                     <a href="#">Listing Details</a>
                                                     <ul class="dropdown sub-menu">
-                                                        <li><a href="single-listing-one.html">Single Listing one</a></li>
-                                                        <li><a href="single-listing-two.html">Single Listing two</a></li>
-                                                        <li><a href="single-listing-three.html">Single Listing three</a></li>
-                                                        <li><a href="single-listing-four.html">Single Listing four</a></li>
-                                                        <li><a href="single-listing-five.html">Single Listing five</a></li>
+                                                        <li><a href="single-listing-one.html">Single Listing one</a>
+                                                        </li>
+                                                        <li><a href="single-listing-two.html">Single Listing two</a>
+                                                        </li>
+                                                        <li><a href="single-listing-three.html">Single Listing three</a>
+                                                        </li>
+                                                        <li><a href="single-listing-four.html">Single Listing four</a>
+                                                        </li>
+                                                        <li><a href="single-listing-five.html">Single Listing five</a>
+                                                        </li>
 
                                                     </ul>
                                                 </li>
@@ -145,33 +150,38 @@
                     <div class="login-wrapper">
                         <ul class="ui-list nav nav-tabs justify-content-center mar-bot-30" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#login" role="tab" aria-selected="true">Ավելացնել հյուրանոց</a>
+                                <a class="nav-link active" data-toggle="tab" href="#login" role="tab"
+                                   aria-selected="true">Ավելացնել հյուրանոց</a>
                             </li>
                         </ul>
                         <div class="ui-dash tab-content">
                             <div class="tab-pane fade show active" id="login" role="tabpanel">
-                                <form id="login-form" action="/addHotel" method="post" enctype="multipart/form-data" >
-                                    <div class="form-group">
-                                        <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Հյուրանոցի անուն" value="">
+                                <form id="login-form" action="/addHotel" method="post" enctype="multipart/form-data">
+                                    <div th:if="${errors != null && !errors.isEmpty()}">
+                                        <ul>
+                                            <li style="color: #ff0000" th:each="error:${errors}" th:text="${error}"></li>
+                                        </ul>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="հեռախոսահամար" value="">
+                                        <input type="text" name="name" id="name" tabindex="1" class="form-control"
+                                               placeholder="Հյուրանոցի անուն" value="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="address" id="address" tabindex="3" class="form-control" placeholder="հասցե" value="">
+                                        <input type="text" name="phone" id="phone" tabindex="2" class="form-control"
+                                               placeholder="հեռախոսահամար" value="">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="contact-form__textarea" name="description" id="comment" placeholder="նկարագրություն"></textarea>
+                                        <input type="text" name="address" id="address" tabindex="3" class="form-control"
+                                               placeholder="հասցե" value="">
                                     </div>
-                                    <div >
-                                        <div class="contact-form__upload-btn xs-left">
-                                            <input class="contact-form__input-file" type="file" name="pictures" id="photo-upload" multiple>
-                                            <span style="color: lightseagreen">
-                                                    Ավելացնել նկար
-                                                </span>
-                                        </div>
+                                    <div class="form-group">
+                                        <textarea class="contact-form__textarea"   name="description" id="description" placeholder="նկարագրություն"></textarea>
                                     </div>
-
+                                    <div class="contact-form__upload-btn xs-left">
+                                        <input class="contact-form__input-file" type="file" name="picture"
+                                               id="photo-upload" multiple>
+                                        <span style="color: lightseagreen">Ավելացնել նկար</span>
+                                    </div>
                                     <div class="res-box text-center mar-top-30">
                                         <button type="submit" class="btn v3">Ավելացնել</button>
                                     </div>
