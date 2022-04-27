@@ -4,6 +4,8 @@ import com.example.cometogyumri.entity.hotelDetails.Hotel;
 import com.example.cometogyumri.entity.userDetail.User;
 import com.example.cometogyumri.repository.hotelDetailsRepo.HotelRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,8 +25,8 @@ public class HotelService {
         hotelPictureService.saveHotelPictures(uploadedFiles, hotel);
     }
 
-    public List<Hotel> findAllHotels() {
-        return hotelRepository.findAll();
+    public Page<Hotel> findAllHotels(Pageable pageable) {
+        return hotelRepository.findAll(pageable);
     }
 
     public Hotel getById(int hotelId) {
