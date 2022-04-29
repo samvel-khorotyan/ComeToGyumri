@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -43,14 +45,20 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void save(User userFromDb) {
+        userRepository.save(userFromDb);
+    }
+
+    public Optional<User> findByToken(UUID token) {
+        return userRepository.findByToken(String.valueOf(token));
+    }
+
     public User findById(int id) {
         return userRepository.getById(id);
     }
+
 
     public User getById(int id) {
         return userRepository.getById(id);
     }
 }
-
-
-
