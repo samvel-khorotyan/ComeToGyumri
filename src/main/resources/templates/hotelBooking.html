@@ -46,7 +46,7 @@
                                         <li class="has-children">
                                             <a href="#">Home</a>
                                             <ul class="dropdown">
-                                                <li><a href="home-v1.html">Home Tab</a></li>
+                                                <li><a href="home-v1____.html">Home Tab</a></li>
                                                 <li><a href="home-v2.html">Home Hero</a></li>
                                                 <li><a href="home-v3.html">Home Video</a></li>
                                                 <li><a href="home-v4.html">Home parallax</a></li>
@@ -59,66 +59,65 @@
                                             </ul>
                                         </li>
                                         <li class="has-children">
-                                            <a href="#">Listings</a>
-                                            <ul class="dropdown">
-                                                <li class="has-children">
-                                                    <a href="#">List Layout</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="list-fullwidth.html">Full Width</a></li>
-                                                        <li><a href="list-fullwidth-map.html">Fullwidth with map</a>
-                                                        </li>
-                                                        <li><a href="list-left-sidebar.html">Left Sidebar</a></li>
-                                                        <li><a href="list-right-sidebar.html">Right Sidebar</a></li>
-                                                    </ul>
+
+                                            <a th:href="@{'/deleteHotel' + ${hotel.id}}" th:method="${'post'}">Ջնջել հյուրանոցը</a>
+
+<!--                                            <ul class="dropdown">-->
+<!--                                                <li class="has-children">-->
+<!--                                                    <a href="#">List Layout</a>-->
+<!--                                                    <ul class="dropdown sub-menu">-->
+<!--                                                        <li><a href="list-fullwidth.html">Full Width</a></li>-->
+<!--                                                        <li><a href="list-fullwidth-map.html">Fullwidth with map</a>-->
+<!--                                                        </li>-->
+<!--                                                        <li><a href="list-left-sidebar.html">Left Sidebar</a></li>-->
+<!--                                                        <li><a href="list-right-sidebar.html">Right Sidebar</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li class="has-children">-->
+<!--                                                    <a href="#">Grid Layout</a>-->
+<!--                                                    <ul class="dropdown sub-menu">-->
+<!--                                                        <li><a href="grid-fullwidth.html">Full Width</a></li>-->
+<!--                                                        <li><a href="grid-fullwidth-map.html">Fullwidth with map</a>-->
+<!--                                                        </li>-->
+<!--                                                        <li><a href="grid-two-column.html">Grid two column</a></li>-->
+<!--                                                        <li><a href="grid-left-sidebar.html">Left Sidebar</a></li>-->
+<!--                                                        <li><a href="grid-right-sidebar.html">Right Sidebar</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li class="has-children">-->
+<!--                                                    <a href="#">Map sidebar Layout</a>-->
+<!--                                                    <ul class="dropdown sub-menu">-->
+<!--                                                        <li><a href="list-left-sidemap.html">List Left sidemap</a></li>-->
+<!--                                                        <li><a href="list-right-sidemap.html">List Right sidemap</a>-->
+<!--                                                        </li>-->
+<!--                                                        <li><a href="grid-left-sidemap.html">grid Left sidemap</a></li>-->
+<!--                                                        <li><a href="grid-right-sidemap.html">grid Right sidemap</a>-->
+<!--                                                        </li>-->
+<!--                                                        <li><a href="grid-search-half-map.html">advanced search</a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </li>-->
+<!--                                                <li class="has-children">-->
+<!--                                                    <a href="#">OpenStreet Map</a>-->
+<!--                                                    <ul class="dropdown sub-menu">-->
+<!--                                                        <li><a href="grid-fullwidth-leaflet-map.html">Grid Fullwidth</a>-->
+<!--                                                        </li>-->
+<!--                                                        <li><a href="list-fullwidth-leaflet-map.html">List FullWidth</a>-->
+<!--                                                        </li>-->
+<!--                                                        <li><a href="grid-left-leaflet-sidemap.html">Grid Left-->
+<!--                                                            Sidemap</a></li>-->
+<!--                                                        <li><a href="list-left-leaflet-sidemap.html">List Left-->
+<!--                                                            Sidemap</a></li>-->
+<!--                                                        <li><a href="grid-right-leaflet-sidemap.html">Grid Right-->
+<!--                                                            Sidemap</a></li>-->
+<!--                                                        <li><a href="list-right-leaflet-sidemap.html">List Right-->
+<!--                                                            Sidemap</a></li>-->
+<!--                                                        <li><a href="grid-search-half-leaflet-map.html">Advance Map-->
+<!--                                                            Search</a></li>-->
+<!--                                                    </ul>-->
                                                 </li>
                                                 <li class="has-children">
-                                                    <a href="#">Grid Layout</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="grid-fullwidth.html">Full Width</a></li>
-                                                        <li><a href="grid-fullwidth-map.html">Fullwidth with map</a>
-                                                        </li>
-                                                        <li><a href="grid-two-column.html">Grid two column</a></li>
-                                                        <li><a href="grid-left-sidebar.html">Left Sidebar</a></li>
-                                                        <li><a href="grid-right-sidebar.html">Right Sidebar</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-children">
-                                                    <a href="#">Map sidebar Layout</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="list-left-sidemap.html">List Left sidemap</a></li>
-                                                        <li><a href="list-right-sidemap.html">List Right sidemap</a>
-                                                        </li>
-                                                        <li><a href="grid-left-sidemap.html">grid Left sidemap</a></li>
-                                                        <li><a href="grid-right-sidemap.html">grid Right sidemap</a>
-                                                        </li>
-                                                        <li><a href="grid-search-half-map.html">advanced search</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-children">
-                                                    <a href="#">OpenStreet Map</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="grid-fullwidth-leaflet-map.html">Grid Fullwidth</a>
-                                                        </li>
-                                                        <li><a href="list-fullwidth-leaflet-map.html">List FullWidth</a>
-                                                        </li>
-                                                        <li><a href="grid-left-leaflet-sidemap.html">Grid Left
-                                                            Sidemap</a></li>
-                                                        <li><a href="list-left-leaflet-sidemap.html">List Left
-                                                            Sidemap</a></li>
-                                                        <li><a href="grid-right-leaflet-sidemap.html">Grid Right
-                                                            Sidemap</a></li>
-                                                        <li><a href="list-right-leaflet-sidemap.html">List Right
-                                                            Sidemap</a></li>
-                                                        <li><a href="grid-search-half-leaflet-map.html">Advance Map
-                                                            Search</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-children">
-                                                    <a href="#">Category Listings</a>
-                                                    <ul class="dropdown sub-menu">
-                                                        <li><a href="all-categories.html">All Category</a></li>
-                                                        <li><a href="all-locations.html">All Locations</a></li>
-                                                    </ul>
+                                                    <a th:href="@{'/showEditHotel' + ${hotel.id}}">Փոփոխել հյուրանոցի տվյալները</a>
+
                                                 </li>
                                                 <li class="has-children">
                                                     <a href="#">Listing Details</a>
@@ -204,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <!--mobile-menu starts -->
+
                 <div class="site-mobile-menu">
                     <div class="site-mobile-menu-header">
                         <div class="site-mobile-menu-close  js-menu-toggle">
@@ -513,134 +512,160 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="reviews" class="list-details-section">
+
+                        <div id="reviews" class="list-details-section mar-top-10">
                             <h4>Reviews <span>(15)</span></h4>
                             <div class="review-box">
                                 <ul class="review_wrap">
                                     <li>
-                                        <div class="customer-review_wrap">
-                                            <div class="reviewer-img">
-                                                <img src="images/clients/reviewer-1.png" class="img-fluid" alt="...">
-                                                <p>Frank Jane</p>
+                                        <div class="customer-review_wrap" th:each="comment:${comments}">
+                                            <div class="reviewer-img" >
+                                                <img th:if="${comment.user.picUrl!= null && comment.user.picUrl!=''}"
+                                                     th:src="@{/getImage(picName=${comment.user.picUrl})}"class="img-fluid" alt="...">
+                                                <p th:text="${comment.user.name + ' ' + comment.user.surname}"></p>
                                                 <span>35 Reviews</span>
                                             </div>
                                             <div class="customer-content-wrap">
                                                 <div class="customer-content">
                                                     <div class="customer-review">
-                                                        <h6>Best hotel in the Newyork city</h6>
-                                                        <p>Posted 2 days ago</p>
+                                                        <h6><p th:text="${comment.hotel.name}">  </p></h6>
+
                                                     </div>
                                                     <div class="customer-rating">5.0</div>
                                                 </div>
-                                                <p class="customer-text">I love the hotel here but it is so rare that I
-                                                    get to come here. Tasty Hand-Pulled hotel is the best type of whole
-                                                    in the wall restaurant. The staff are really nice, and you should be
-                                                    seated quickly.
-                                                </p>
-                                                <div class="review-img">
-                                                    <img src="images/single-listing/gallery-1.jpg" alt="...">
-                                                    <img src="images/single-listing/gallery-2.jpg" alt="...">
-                                                    <img src="images/single-listing/gallery-3.jpg" alt="...">
+                                                <p class="customer-text" th:text="${comment.description}"></p>
 
-                                                </div>
 
-                                                <div class="like-btn mar-top-40">
-                                                    <a href="#" class="rate-review float-left"><i
-                                                            class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>
-                                                    <a href="#" class="rate-review float-right"><i
-                                                            class="icofont-reply"></i>Reply</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="has-child">
-                                            <li>
-                                                <div class="customer-review_wrap">
-                                                    <div class="reviewer-img">
-                                                        <img src="images/clients/reviewr-2.png" class="img-fluid"
-                                                             alt="#">
-                                                        <p>Amanda G</p>
-                                                        <span>35 Reviews</span>
-                                                    </div>
-                                                    <div class="customer-content-wrap">
-                                                        <div class="customer-content">
-                                                            <div class="customer-review">
-                                                                <h6>Best hotel in the Newyork city</h6>
-                                                                <p>Posted 1 day ago</p>
-                                                            </div>
-                                                        </div>
-                                                        <p class="customer-text">I love the hotel here but it is so rare
-                                                            that I get to come here. Tasty Hand-Pulled hotel is the best
-                                                            type of whole in the wall restaurant. The staff are really
-                                                            nice, and you should be seated quickly.
-                                                        </p>
-                                                        <div class="like-btn mar-top-40">
-                                                            <a href="#" class="rate-review float-left"><i
-                                                                    class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>
-                                                            <a href="#" class="rate-review float-right"><i
-                                                                    class="icofont-reply"></i>Reply</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="customer-review_wrap">
-                                                    <div class="reviewer-img">
-                                                        <img src="images/clients/reviewer-1.png" class="img-fluid"
-                                                             alt="#">
-                                                        <p>Frank Jane</p>
-                                                        <span>35 Reviews</span>
-                                                    </div>
-                                                    <div class="customer-content-wrap">
-                                                        <div class="customer-content">
-                                                            <div class="customer-review">
-                                                                <h6>Best hotel in the Newyork city</h6>
-                                                                <p>Posted 10 hours ago</p>
-                                                            </div>
-                                                        </div>
-                                                        <p class="customer-text">I love the hotel here but it is so rare
-                                                            that I get to come here. Tasty Hand-Pulled hotel is the best
-                                                            type of whole in the wall restaurant. The staff are really
-                                                            nice, and you should be seated quickly.
-                                                        </p>
-                                                        <div class="like-btn mar-top-40">
-                                                            <a href="#" class="rate-review float-left"><i
-                                                                    class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>
-                                                            <a href="#" class="rate-review float-right"><i
-                                                                    class="icofont-reply"></i>Reply</a>
-                                                        </div>
 
-                                                    </div>
 
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="customer-review_wrap">
-                                            <div class="reviewer-img">
-                                                <img src="images/clients/reviewer-3.png" class="img-fluid" alt="#">
-                                                <p>Lee Priest</p>
-                                                <span>35 Reviews</span>
-                                            </div>
-                                            <div class="customer-content-wrap">
-                                                <div class="customer-content">
-                                                    <div class="customer-review">
-                                                        <h6>Best hotel in the Newyork city</h6>
-                                                        <p>Posted 2 days ago</p>
-                                                    </div>
-                                                    <div class="customer-rating">5.0</div>
-                                                </div>
-                                                <p class="customer-text">I love the hotel here but it is so rare that I
-                                                    get to come here. Tasty Hand-Pulled hotel is the best type of whole
-                                                    in the wall restaurant. The staff are really nice, and you should be
-                                                    seated quickly.
-                                                </p>
-                                                <div class="like-btn mar-top-40">
-                                                    <a href="#" class="rate-review float-left"><i
-                                                            class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>
-                                                    <a href="#" class="rate-review float-right"><i
-                                                            class="icofont-reply"></i>Reply</a>
-                                                </div>
+<!--                        <div id="reviews" class="list-details-section">-->
+<!--                            <h4>Reviews <span>(15)</span></h4>-->
+<!--                            <div class="review-box">-->
+<!--                                <ul class="review_wrap">-->
+<!--                                    <li>-->
+<!--                                        <div class="customer-review_wrap">-->
+<!--                                            <div class="reviewer-img">-->
+<!--                                                <img src="images/clients/reviewer-1.png" class="img-fluid" alt="...">-->
+<!--                                                <p>Frank Jane</p>-->
+<!--                                                <span>35 Reviews</span>-->
+<!--                                            </div>-->
+<!--                                            <div class="customer-content-wrap">-->
+<!--                                                <div class="customer-content">-->
+<!--                                                    <div class="customer-review">-->
+<!--                                                        <h6>Best hotel in the Newyork city</h6>-->
+<!--                                                        <p>Posted 2 days ago</p>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="customer-rating">5.0</div>-->
+<!--                                                </div>-->
+<!--                                                <p class="customer-text">I love the hotel here but it is so rare that I-->
+<!--                                                    get to come here. Tasty Hand-Pulled hotel is the best type of whole-->
+<!--                                                    in the wall restaurant. The staff are really nice, and you should be-->
+<!--                                                    seated quickly.-->
+<!--                                                </p>-->
+<!--                                                <div class="review-img">-->
+<!--                                                    <img src="images/single-listing/gallery-1.jpg" alt="...">-->
+<!--                                                    <img src="images/single-listing/gallery-2.jpg" alt="...">-->
+<!--                                                    <img src="images/single-listing/gallery-3.jpg" alt="...">-->
+
+<!--                                                </div>-->
+
+<!--                                                <div class="like-btn mar-top-40">-->
+<!--                                                    <a href="#" class="rate-review float-left"><i-->
+<!--                                                            class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>-->
+<!--                                                    <a href="#" class="rate-review float-right"><i-->
+<!--                                                            class="icofont-reply"></i>Reply</a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <ul class="has-child">-->
+<!--                                            <li>-->
+<!--                                                <div class="customer-review_wrap">-->
+<!--                                                    <div class="reviewer-img">-->
+<!--                                                        <img src="images/clients/reviewr-2.png" class="img-fluid"-->
+<!--                                                             alt="#">-->
+<!--                                                        <p>Amanda G</p>-->
+<!--                                                        <span>35 Reviews</span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="customer-content-wrap">-->
+<!--                                                        <div class="customer-content">-->
+<!--                                                            <div class="customer-review">-->
+<!--                                                                <h6>Best hotel in the Newyork city</h6>-->
+<!--                                                                <p>Posted 1 day ago</p>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <p class="customer-text">I love the hotel here but it is so rare-->
+<!--                                                            that I get to come here. Tasty Hand-Pulled hotel is the best-->
+<!--                                                            type of whole in the wall restaurant. The staff are really-->
+<!--                                                            nice, and you should be seated quickly.-->
+<!--                                                        </p>-->
+<!--                                                        <div class="like-btn mar-top-40">-->
+<!--                                                            <a href="#" class="rate-review float-left"><i-->
+<!--                                                                    class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>-->
+<!--                                                            <a href="#" class="rate-review float-right"><i-->
+<!--                                                                    class="icofont-reply"></i>Reply</a>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div class="customer-review_wrap">-->
+<!--                                                    <div class="reviewer-img">-->
+<!--                                                        <img src="images/clients/reviewer-1.png" class="img-fluid"-->
+<!--                                                             alt="#">-->
+<!--                                                        <p>Frank Jane</p>-->
+<!--                                                        <span>35 Reviews</span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="customer-content-wrap">-->
+<!--                                                        <div class="customer-content">-->
+<!--                                                            <div class="customer-review">-->
+<!--                                                                <h6>Best hotel in the Newyork city</h6>-->
+<!--                                                                <p>Posted 10 hours ago</p>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <p class="customer-text">I love the hotel here but it is so rare-->
+<!--                                                            that I get to come here. Tasty Hand-Pulled hotel is the best-->
+<!--                                                            type of whole in the wall restaurant. The staff are really-->
+<!--                                                            nice, and you should be seated quickly.-->
+<!--                                                        </p>-->
+<!--                                                        <div class="like-btn mar-top-40">-->
+<!--                                                            <a href="#" class="rate-review float-left"><i-->
+<!--                                                                    class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>-->
+<!--                                                            <a href="#" class="rate-review float-right"><i-->
+<!--                                                                    class="icofont-reply"></i>Reply</a>-->
+<!--                                                        </div>-->
+
+<!--                                                    </div>-->
+
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <div class="customer-review_wrap">-->
+<!--                                            <div class="reviewer-img">-->
+<!--                                                <img src="images/clients/reviewer-3.png" class="img-fluid" alt="#">-->
+<!--                                                <p>Lee Priest</p>-->
+<!--                                                <span>35 Reviews</span>-->
+<!--                                            </div>-->
+<!--                                            <div class="customer-content-wrap">-->
+<!--                                                <div class="customer-content">-->
+<!--                                                    <div class="customer-review">-->
+<!--                                                        <h6>Best hotel in the Newyork city</h6>-->
+<!--                                                        <p>Posted 2 days ago</p>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="customer-rating">5.0</div>-->
+<!--                                                </div>-->
+<!--                                                <p class="customer-text">I love the hotel here but it is so rare that I-->
+<!--                                                    get to come here. Tasty Hand-Pulled hotel is the best type of whole-->
+<!--                                                    in the wall restaurant. The staff are really nice, and you should be-->
+<!--                                                    seated quickly.-->
+<!--                                                </p>-->
+<!--                                                <div class="like-btn mar-top-40">-->
+<!--                                                    <a href="#" class="rate-review float-left"><i-->
+<!--                                                            class="icofont-thumbs-up"></i> Helpful Review <span>2</span></a>-->
+<!--                                                    <a href="#" class="rate-review float-right"><i-->
+<!--                                                            class="icofont-reply"></i>Reply</a>-->
+<!--                                                </div>-->
                                             </div>
                                         </div>
                                     </li>
@@ -649,49 +674,50 @@
                         </div>
                         <div id="add_review" class="list-details-section mar-top-10">
                             <h4>Add Review</h4>
-                            <form class="contact-form" id="leave-review">
-                                <h4 class="contact-form__title">
-                                    Rate us and Write a Review
-                                </h4>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-7 col-12">
-                                        <p class="contact-form__rate">
-                                            Your rating for this listing:
-                                        </p>
-                                        <p class="contact-form__rate-bx">
-                                            <i class="ion-ios-star"></i>
-                                            <i class="ion-ios-star"></i>
-                                            <i class="ion-ios-star"></i>
-                                            <i class="ion-ios-star"></i>
-                                            <i class="ion-ios-star"></i>
-                                        </p>
-                                        <p class="contact-form__rate-bx-show">
-                                            <span class="rate-actual">0</span> / 5
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-sm-5 col-12">
-                                        <div class="contact-form__upload-btn xs-left">
-                                            <input class="contact-form__input-file" type="file" name="photo-upload"
-                                                   id="photo-upload">
-                                            <span>
-                                                    <i class="icofont-upload-alt"></i>
-                                                    Upload Photos
-                                                </span>
-                                        </div>
-                                    </div>
+                            <form class="contact-form" id="leave-review" th:action="@{'/hotelComment' + ${hotel.id}}" method="post">
+<!--                                <h4 class="contact-form__title">-->
+<!--                                    Rate us and Write a Review-->
+<!--                                </h4>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-6 col-sm-7 col-12">-->
+<!--                                        <p class="contact-form__rate">-->
+<!--                                            Your rating for this listing:-->
+<!--                                        </p>-->
+<!--                                        <p class="contact-form__rate-bx">-->
+<!--                                            <i class="ion-ios-star"></i>-->
+<!--                                            <i class="ion-ios-star"></i>-->
+<!--                                            <i class="ion-ios-star"></i>-->
+<!--                                            <i class="ion-ios-star"></i>-->
+<!--                                            <i class="ion-ios-star"></i>-->
+<!--                                        </p>-->
+<!--                                        <p class="contact-form__rate-bx-show">-->
+<!--                                            <span class="rate-actual">0</span> / 5-->
+<!--                                        </p>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6 col-sm-5 col-12">-->
+<!--                                        <div class="contact-form__upload-btn xs-left">-->
+<!--                                            <input class="contact-form__input-file" type="file" name="photo-upload"-->
+<!--                                                   id="photo-upload">-->
+<!--                                            <span>-->
+<!--                                                    <i class="icofont-upload-alt"></i>-->
+<!--                                                    Upload Photos-->
+<!--                                                </span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <input class="contact-form__input-text" type="text" name="name" id="name"-->
+<!--                                               placeholder="Name:">-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <input class="contact-form__input-text" type="text" name="mail" id="mail"-->
+<!--                                               placeholder="Email:">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <div class="form-group">
+                                    <textarea class="contact-form__textarea form-control" name="description" id="description"  placeholder="մեկնաբանություն"></textarea>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input class="contact-form__input-text" type="text" name="name" id="name"
-                                               placeholder="Name:">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input class="contact-form__input-text" type="text" name="mail" id="mail"
-                                               placeholder="Email:">
-                                    </div>
-                                </div>
-                                <textarea class="contact-form__textarea" name="comment" id="comment"
-                                          placeholder="Comment"></textarea>
                                 <input class="btn v1" type="submit" name="submit-contact" id="submit_contact"
                                        value="Submit">
                             </form>
