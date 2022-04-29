@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -29,4 +30,7 @@ public class  User {
     private Gender gender;
     @Enumerated(EnumType.STRING)
     private Role role;
+    private String token;
+    private boolean active;
+    private LocalDateTime tokenCreatedDate;
 }
