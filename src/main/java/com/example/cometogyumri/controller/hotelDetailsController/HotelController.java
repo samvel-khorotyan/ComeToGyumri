@@ -1,11 +1,8 @@
 package com.example.cometogyumri.controller.hotelDetailsController;
 
 import com.example.cometogyumri.dto.hotelDetailsDto.CreateHotelRequest;
-import com.example.cometogyumri.dto.hotelDetailsDto.CreateHotelReservedRequest;
 import com.example.cometogyumri.entity.hotelDetails.Hotel;
-import com.example.cometogyumri.entity.hotelDetails.HotelReserved;
 import com.example.cometogyumri.security.CurrentUser;
-import com.example.cometogyumri.service.hotelDetailsService.HotelReservedService;
 import com.example.cometogyumri.service.hotelDetailsService.HotelService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
@@ -37,7 +34,6 @@ public class HotelController {
 
     private final HotelService hotelService;
     private final ModelMapper modelMapper;
-    private final HotelReservedService hotelReservedService;
 
     @Value("${hotelImagePath.upload.path}")
     private String hotelImagePath;
@@ -45,6 +41,12 @@ public class HotelController {
     @GetMapping("/showAddHotel")
     public String addHotel() {
         return "saveHotel";
+    }
+
+    @GetMapping("/showEditHotel{id}")
+    public String showEditPage(@PathVariable("id") int id,ModelMap map) {
+        map.addAttribute(hotelService.getById(id));
+        return "editHotel";
     }
 
     @PostMapping("/addHotel")
@@ -83,20 +85,30 @@ public class HotelController {
         return "hotels";
     }
 
-    @GetMapping("/hotelBooking{id}")
-    public String hotelBooking(@PathVariable("id") int id, ModelMap map) {
-        map.addAttribute("hotel", hotelService.getById(id));
-        return "hotelBooking";
+    @PostMapping("/updateHotel{id}")
+    public String updateHotel(@ModelAttribute @Valid CreateHotelRequest createHotelRequest,
+                              @AuthenticationPrincipal CurrentUser currentUser,
+                              BindingResult bindingResult, ModelMap map,
+                              @PathVariable("id") int id) throws IOException {
+
+        if (bindingResult.hasErrors()) {
+            List<String> errors = new ArrayList<>();
+            for (ObjectError allError : bindingResult.getAllErrors()) {
+                errors.add(allError.getDefaultMessage());
+                map.addAttribute("errors", errors);
+            }
+            return "editHotel";
+        }
+
+        Hotel hotel = modelMapper.map(createHotelRequest, Hotel.class);
+        hotelService.updateHotel(hotel, currentUser.getUser(), id);
+
+        return "redirect:/hotels";
     }
 
-    @PostMapping("/hotelBooking{id}")
-    public String hotelBooking(@ModelAttribute CreateHotelReservedRequest createHotelReservedRequest,
-                               @AuthenticationPrincipal CurrentUser currentUser,
-                               @PathVariable("id") int id) {
-
-        HotelReserved hotelReserved = modelMapper.map(createHotelReservedRequest, HotelReserved.class);
-        Hotel hotel = hotelService.getById(id);
-        hotelReservedService.save(hotelReserved, currentUser.getUser(), hotel);
+    @GetMapping("/deleteHotel{id}")
+    public String deleteHotel(@PathVariable int id) {
+        hotelService.deleteById(id);
         return "redirect:/hotels";
     }
 

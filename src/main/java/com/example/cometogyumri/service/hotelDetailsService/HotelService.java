@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,11 +25,25 @@ public class HotelService {
         hotelPictureService.saveHotelPictures(uploadedFiles, hotel);
     }
 
+    public void updateHotel(Hotel hotel, User user, int id) throws IOException {
+        hotel.setId(id);
+        hotel.setUser(user);
+        hotelRepository.save(hotel);
+    }
+
     public Page<Hotel> findAllHotels(Pageable pageable) {
         return hotelRepository.findAll(pageable);
     }
 
     public Hotel getById(int hotelId) {
         return hotelRepository.getById(hotelId);
+    }
+
+    public Optional<Hotel> findById(int hotelId) {
+        return hotelRepository.findById(hotelId);
+    }
+
+    public void deleteById(int id) {
+        hotelRepository.deleteById(id);
     }
 }
