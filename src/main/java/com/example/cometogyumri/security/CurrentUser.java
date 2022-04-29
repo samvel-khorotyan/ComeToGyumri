@@ -1,6 +1,5 @@
 package com.example.cometogyumri.security;
 
-
 import com.example.cometogyumri.entity.userDetail.User;
 import org.springframework.security.core.authority.AuthorityUtils;
 
@@ -9,11 +8,12 @@ public class CurrentUser extends org.springframework.security.core.userdetails.U
     private final User user;
 
     public CurrentUser(User user) {
-        super(user.getEmail(), user.getPassword(), AuthorityUtils.createAuthorityList(user.getRole().name()));
+        super(user.getEmail(),user.getPassword(),
+                user.isActive(), true, true, true, AuthorityUtils.createAuthorityList(user.getRole().name()));
         this.user = user;
     }
 
-    public User getUser() {
+    public User getUser(){
         return user;
     }
 }
