@@ -7,6 +7,8 @@ import com.example.cometogyumri.repository.restaurantDetailsRepo.RestaurantPictu
 import com.example.cometogyumri.repository.restaurantDetailsRepo.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -63,5 +65,9 @@ public class RestaurantService {
 
     public Restaurant getRestaurantById(int restaurantId) {
       return restaurantRepository.getById(restaurantId);
+    }
+
+    public Page<Restaurant> findAllRestaurants(PageRequest pageRequest) {
+        return restaurantRepository.findAll(pageRequest);
     }
 }

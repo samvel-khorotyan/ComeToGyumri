@@ -457,7 +457,7 @@ hr {
 }
 
 .img-fluid {
-    max-width: 100%;
+    max-width:70%;
     height: auto
 }
 
@@ -4633,12 +4633,28 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     color: #6c757d
 }
 
+/*.pagination {*/
+/*    display: -ms-flexbox;*/
+/*    display: flex;*/
+/*    padding-left: 0;*/
+/*    list-style: none;*/
+/*    border-radius: .25rem*/
+/*}*/
+
 .pagination {
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 0;
-    list-style: none;
-    border-radius: .25rem
+    display: inline-block;
+}
+
+.pagination a {
+    color: lightseagreen;
+    float: left;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+.pagination a.active {
+    background: #0cbcb7;
+    color: white;
+    border-radius: 2px;
 }
 
 .page-link {
