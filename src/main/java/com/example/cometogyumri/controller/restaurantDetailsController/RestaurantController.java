@@ -1,6 +1,7 @@
 package com.example.cometogyumri.controller.restaurantDetailsController;
 
 import com.example.cometogyumri.dto.restaurantDetailsDto.CreateRestaurantRequest;
+import com.example.cometogyumri.entity.hotelDetails.Hotel;
 import com.example.cometogyumri.entity.restaurantDetails.Restaurant;
 import com.example.cometogyumri.security.CurrentUser;
 import com.example.cometogyumri.service.restaurantDetailsService.RestaurantService;
@@ -8,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,6 +26,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 @RequiredArgsConstructor
@@ -37,9 +43,19 @@ public class RestaurantController {
 
 
     @GetMapping("/restaurants")
-    public String getAllRestaurant(ModelMap map) {
-        List<Restaurant> restaurants = restaurantService.findAll();
-        map.addAttribute("restaurants", restaurants);
+    public String restaurantsPage(ModelMap modelMap, @RequestParam(value = "page", defaultValue = "0") int page,
+                         @RequestParam(value = "size", defaultValue = "5") int size) {
+
+        PageRequest pageRequest = PageRequest.of(page, size, Sort.by("id").descending());
+        Page<Restaurant> allRestaurants = restaurantService.findAllRestaurants(pageRequest);
+        modelMap.addAttribute("restaurants", allRestaurants);
+        int totalPages = allRestaurants.getTotalPages();
+        if (totalPages > 0) {
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
+                    .boxed()
+                    .collect(Collectors.toList());
+            modelMap.addAttribute("pageNumbers", pageNumbers);
+        }
         return "restaurants";
     }
 
