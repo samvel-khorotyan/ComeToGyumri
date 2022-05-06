@@ -15,7 +15,7 @@ public class RestaurantReservedService {
 
     public void booking(RestaurantReserved reserved, User user, int restaurantId) {
         var allByDateDuration = repository
-                .findAllByDateDuration(reserved.getBookingStartTime(),reserved.getBookingDate(), reserved.getTableNumber());
+                .findAllByTimeDuration(reserved.getBookingStartTime(),reserved.getBookingDate(), reserved.getTableNumber());
         if (allByDateDuration.isEmpty()) {
             reserved.setUser(user);
             reserved.setRestaurant(restaurantService.getRestaurantById(restaurantId));
